@@ -15,6 +15,8 @@ Route::get('/', 'Front\HomeController@index')->name('home');
 
 Route::get('home', 'Front\HomeController@index')->name('home');
 
+Route::get('page/{id}','Front\HomeController@index');
+
 Route::get('about', array('as' => 'about', function(){
     return View::make('global.about');
 }));
@@ -27,12 +29,8 @@ Route::get('post', array('as' => 'post', function(){
     return View::make('global.post');
 }));
 
-/*Route::get('post/{id}', array('as' => 'post_detail', function($id){
-    return $id;
-}));*/
-
 Route::get('post/{id}', function ($id) {
-    return 'User '.$id;
+    return View::make('global.post');
 });
 
 Auth::routes();

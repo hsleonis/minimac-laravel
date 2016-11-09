@@ -9,15 +9,19 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     /**
-     * Show the application dashboard.
+     * Show the home page.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id=1)
     {
-        $blogs = Blog::limit(5)->offset(0)->get();
+        $off = ($id-1)*5;
+        $blogs = Blog::limit(5)->offset($off)->get();
+        $older = (count($blogs)>5)?$id:0;
+
         return view('global.home')->with(array(
-            'blogs' =>  $blogs
+            'blogs' =>  $blogs,
+            'show_older' => $older
         ));
     }
 }

@@ -71,9 +71,9 @@
                 <li>
                     <a href="{{ URL::route('about') }}">About</a>
                 </li>
-                <li>
+                {{--<li>
                     <a href="{{ URL::route('post') }}">Sample Post</a>
-                </li>
+                </li>--}}
                 <li>
                     <a href="{{ URL::route('contact') }}">Contact</a>
                 </li>

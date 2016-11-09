@@ -13,7 +13,7 @@
 
 @section('brand', 'MiniMac')
 
-@section('header_img', 'resource/img/home-bg.jpg')
+@section('header_img',  URL::asset('resource/img/home-bg.jpg') )
 
 @section('title', 'MiniMac')
 
@@ -47,10 +47,12 @@
         <hr>
     @endif
 
-    <!-- Pager -->
-    <ul class="pager">
-        <li class="next">
-            <a href="#">Older Posts →</a>
-        </li>
-    </ul>
+    @if ($show_older)
+        <!-- Pager -->
+        <ul class="pager">
+            <li class="next">
+                <a href="{{ URL::to('page/') }}">Older Posts →</a>
+            </li>
+        </ul>
+    @endif
 @endsection
