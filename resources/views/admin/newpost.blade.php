@@ -21,8 +21,32 @@
 
 @section('content')
     <h1>Add New Post</h1>
-    <form action="" enctype="multipart/form-data" method="post">
-        <div id="post-entry"><textarea name="post-data"></textarea></div>
-        <button type="submit" name="post-button" class="btn btn-default">Publish Post</button>
-    </form>
+
+    {{-- Form start comment --}}
+    {{ Form::open(array('url' => 'admin/savepost')) }}
+        {!! csrf_field() !!}
+        <div class="form-group">
+            {{ Form::label('title', 'Title') }}
+            {{ Form::text('title', null, array("placeholder" => "Title")) }}
+        </div>
+        <div class="form-group">
+            {{ Form::label('subtitle', 'Subtitle') }}
+            {{ Form::text('subtitle', null, array("placeholder" => "Subtitle")) }}
+        </div>
+        <div id="post-entry">
+            {{ Form::textarea('content') }}
+        </div>
+        <div class="form-group">
+            {{ Form::label('category', 'Category') }}
+            {{ Form::text('category', null, array("placeholder" => "Category")) }}
+        </div>
+        <div class="form-group">
+            {{ Form::label('tags', 'Tags') }}
+            {{ Form::text('tags', null, array("placeholder" => "Tags: Nature, Blog")) }}
+        </div>
+        {{ Form::submit('Publish Post', array('class' => 'btn btn-default')) }}
+
+    {{ Form::close() }}
+    {{-- Form end comment --}}
+
 @endsection

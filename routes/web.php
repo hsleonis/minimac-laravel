@@ -11,13 +11,9 @@
 |
 */
 
-Route::get('/', function(){
-    return View::make('global.home');
-});
+Route::get('/', 'Front\HomeController@index')->name('home');
 
-Route::get('home', array('as' => 'home', function(){
-    return View::make('global.home');
-}));
+Route::get('home', 'Front\HomeController@index')->name('home');
 
 Route::get('about', array('as' => 'about', function(){
     return View::make('global.about');
@@ -30,6 +26,14 @@ Route::get('contact', array('as' => 'contact', function(){
 Route::get('post', array('as' => 'post', function(){
     return View::make('global.post');
 }));
+
+/*Route::get('post/{id}', array('as' => 'post_detail', function($id){
+    return $id;
+}));*/
+
+Route::get('post/{id}', function ($id) {
+    return 'User '.$id;
+});
 
 Auth::routes();
 
@@ -44,4 +48,6 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
     });
 
     Route::get('newpost', 'Admin\DashboardController@newpost')->name('newpost');
+
+    Route::post('savepost', 'Admin\DashboardController@savepost')->name('savepost');
 });
