@@ -29,9 +29,7 @@ Route::get('post', array('as' => 'post', function(){
     return View::make('global.post');
 }));
 
-Route::get('post/{id}', function ($id) {
-    return View::make('global.post');
-});
+Route::get('post/{id}','Front\PostController@index');
 
 Auth::routes();
 

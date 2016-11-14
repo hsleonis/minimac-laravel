@@ -51,12 +51,12 @@
     <ul class="pager">
         @if ( $prv_page )
             <li class="previous">
-                <a href="{{ $prv_page }}">← Newer Posts</a>
+                <a href="{{ URL::to( $prv_page ) }}">← Newer Posts</a>
             </li>
         @endif
         @if ( $next_page )
         <li class="next">
-            <a href="{{ $next_page }}">Older Posts →</a>
+            <a href="{{ URL::to( $next_page ) }}">Older Posts →</a>
         </li>
         @endif
     </ul>
