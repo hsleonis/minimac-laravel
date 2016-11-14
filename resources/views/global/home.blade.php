@@ -47,12 +47,17 @@
         <hr>
     @endif
 
-    @if ($show_older)
-        <!-- Pager -->
-        <ul class="pager">
-            <li class="next">
-                <a href="{{ URL::to('page/') }}">Older Posts →</a>
+    <!-- Pager -->
+    <ul class="pager">
+        @if ( $prv_page )
+            <li class="previous">
+                <a href="{{ $prv_page }}">← Newer Posts</a>
             </li>
-        </ul>
-    @endif
+        @endif
+        @if ( $next_page )
+        <li class="next">
+            <a href="{{ $next_page }}">Older Posts →</a>
+        </li>
+        @endif
+    </ul>
 @endsection

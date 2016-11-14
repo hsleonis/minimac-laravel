@@ -15,13 +15,14 @@ class HomeController extends Controller
      */
     public function index($id=1)
     {
-        $off = ($id-1)*5;
-        $blogs = Blog::limit(5)->offset($off)->get();
-        $older = (count($blogs)>5)?$id:0;
+        $blogs = Blog::simplePaginate(3);
+        //$blogs->setPath('page/'.$blogs->currentPage());
 
         return view('global.home')->with(array(
             'blogs' =>  $blogs,
-            'show_older' => $older
+            'show_older' => $blogs->hasMorePages(),
+            'next_page'  => $blogs->nextPageUrl(),
+            'prv_page'  => $blogs->previousPageUrl()
         ));
     }
 }
