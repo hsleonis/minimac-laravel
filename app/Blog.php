@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Blog extends Model
 {
     // protected $table = 'blogs';
+    protected $dates = ['published_at'];
 
     /**
      * The attributes that are mass assignable.
@@ -15,7 +16,7 @@ class Blog extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'subtitle', 'content', 'category', 'image', 'tags', 'user'
+        'title', 'slug', 'subtitle', 'content', 'category', 'image', 'tags', 'user'
     ];
 
     // Validation Rules and Validator Function
@@ -28,5 +29,14 @@ class Blog extends Model
         );
 
         return Validator::make($input,$rules);
+    }
+
+    public function setTitleAttribute($value)
+    {
+        $this->attributes['title'] = $value;
+
+        if (! $this->exists) {
+            $this->attributes['slug'] = str_slug($value);
+        }
     }
 }

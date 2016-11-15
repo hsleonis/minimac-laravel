@@ -59,7 +59,7 @@
                     <a href="{{ URL::route('dashboard') }}">Dashboard</a>
                 </li>
                 <li>
-                    <a href="#">Posts</a>
+                    <a href="{{ URL::to('admin/post') }}">Posts</a>
                 </li>
                 <li>
                     <a href="{{ URL::route('newpost') }}">Add New</a>

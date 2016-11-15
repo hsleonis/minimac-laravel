@@ -25,4 +25,13 @@
 
 @section('content')
     {!! $post->content !!}
+    <div class="post-tags">
+        @if($post->tags)
+            <ul>
+            @foreach(explode(',', $post->tags) as $tag)
+                <li class="tag"><a href="#">{{ $tag }}</a></li>
+            @endforeach
+            </ul>
+        @endif
+    </div>
 @endsection

@@ -17,10 +17,10 @@ class HomeController extends Controller
      */
     public function index($id=1)
     {
-        $limit = 3;
+        $limit = config('blog.posts_per_page');
         $offset = ($id-1)*$limit;
 
-        $blogs = Blog::limit($limit)->offset($offset)->get();
+        $blogs = Blog::orderBy('published_at', 'desc')->limit($limit)->offset($offset)->get();
         $all = count(Blog::all());
 
         $next_page = ($all>$offset+$limit)?'page/'.($id+1):0;

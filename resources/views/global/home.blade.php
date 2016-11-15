@@ -23,7 +23,7 @@
     @if( count($blogs) > 0 )
         @foreach( $blogs as $blog)
             <div class="post-preview">
-                <a href="{{ URL::to('post/'.$blog->id) }}">
+                <a href="{{ URL::to('post/'.$blog->slug) }}">
                     <h2 class="post-title">
                         {{ $blog->title }}
                     </h2>

@@ -15,9 +15,9 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id=1)
+    public function index($slug)
     {
-        $post = Blog::where('id', $id)->get()->first();
+        $post = Blog::where('slug', $slug)->get()->first();
 
         return view('global.post')->with(array(
             'post' =>  $post,

@@ -12,10 +12,9 @@
 */
 
 Route::get('/', 'Front\HomeController@index')->name('home');
-
-Route::get('home', 'Front\HomeController@index')->name('home');
-
+Route::get('home', 'Front\HomeController@index');
 Route::get('page/{id}','Front\HomeController@index');
+Route::get('post','Front\HomeController@index');
 
 Route::get('about', array('as' => 'about', function(){
     return View::make('global.about');
@@ -25,11 +24,11 @@ Route::get('contact', array('as' => 'contact', function(){
     return View::make('global.contact');
 }));
 
-Route::get('post', array('as' => 'post', function(){
+/*Route::get('post', array('as' => 'post', function(){
     return View::make('global.post');
-}));
+}));*/
 
-Route::get('post/{id}','Front\PostController@index');
+Route::get('post/{slug}','Front\PostController@index');
 
 Auth::routes();
 
@@ -46,4 +45,7 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth'), function() {
     Route::get('newpost', 'Admin\DashboardController@newpost')->name('newpost');
 
     Route::post('savepost', 'Admin\DashboardController@savepost')->name('savepost');
+
+    Route::get('post','Admin\DashboardController@allposts');
+    Route::get('blog/{id}','Admin\DashboardController@allposts');
 });
