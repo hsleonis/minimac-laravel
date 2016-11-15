@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Front;
 use App\Blog;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Traits\HumanDateTrait;
 
 class HomeController extends Controller
 {
+    use HumanDateTrait;
     /**
      * Show the home page.
      *

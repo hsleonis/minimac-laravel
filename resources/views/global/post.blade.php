@@ -20,7 +20,7 @@
 @section('subtitle', $post->subtitle)
 
 @section('author')
-    <span class="meta">Posted by <a href="#">{{ $post->user }}</a> on {{ $post->created_at }}</span>
+    <span class="meta">Posted by <a href="#">{{ $post->user }}</a> on {{ $date_created }}</span>
 @endsection
 
 @section('content')
