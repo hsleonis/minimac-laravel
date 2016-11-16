@@ -37,7 +37,7 @@
         @endif
     </div>
     <div class="col-xs-6 comments-link">
-        <span><a title="Comment" href="{{ URL::to('post/'.$post->slug) }}#comments"><i class="ion-ios-chatbubble-outline disqus-comment-count" data-disqus-url="{{ URL::to('post/'.$post->slug) }}"></i></a></span>
+        <span><a title="Comment" href="{{ URL::to('post/'.$post->slug) }}#comments"><i class="ion-ios-chatbubble-outline"><span class="disqus-comment-count" data-disqus-identifier="{{ 'post_'.$post->slug }}"></span></i></a></span>
     </div>
     <div class="col-xs-6 post-share">
         <div class="post-share-inner pull-right">
