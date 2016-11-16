@@ -25,7 +25,7 @@
     <link href="https://cdn.rawgit.com/Alex-D/Trumbowyg/2.0.0-beta.7/dist/ui/trumbowyg.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="{{ URL::asset('resource/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ URL::asset('resource/css/ionicons.min.css') }}" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -131,25 +131,25 @@
                 <ul class="list-inline text-center">
                     <li>
                         <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                <span class="ion-stack">
+                                    <i class="ion-record ion-lg ion-stack-2x"></i>
+                                    <i class="ion-social-twitter ion-stack-1x"></i>
                                 </span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                <span class="ion-stack">
+                                    <i class="ion-record ion-lg ion-stack-2x"></i>
+                                    <i class="ion-social-facebook ion-stack-1x"></i>
                                 </span>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                <span class="ion-stack">
+                                    <i class="ion-record ion-lg ion-stack-2x"></i>
+                                    <i class="ion-social-github ion-stack-1x"></i>
                                 </span>
                         </a>
                     </li>
