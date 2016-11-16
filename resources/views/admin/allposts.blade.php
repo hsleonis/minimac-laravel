@@ -21,14 +21,36 @@
 
 @section('content')
     @if( count($blogs) > 0 )
-        <div class="list-group">
+        <table class="post-admin-table table table-striped">
+            <thead>
+            <tr>
+                <th>Post</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Trash</th>
+            </tr>
+            </thead>
+            <tbody>
         @foreach( $blogs as $blog)
-            <a href="{{ URL::to('post/'.$blog->slug) }}" class="list-group-item">
-                <h4 class="list-group-item-heading">{{ $blog->title }}</h4>
-                <p class="list-group-item-text">{{ $blog->subtitle }}</p>
-            </a>
+                <tr>
+                    <td class="post-admin-summery">
+                        <h4>{{ $blog->title }}</h4>
+                        <p>{{ $blog->subtitle }}</p>
+                        <p></p>
+                    </td>
+                    <td class="text-center">
+                        <a href="{{ URL::to('post/'.$blog->slug) }}"><span><i class="ion-eye"></i></span></a>
+                    </td>
+                    <td class="text-center">
+                        <span><i class="ion-edit"></i></span>
+                    </td>
+                    <td class="text-center">
+                        <span><i class="ion-close"></i></span>
+                    </td>
+                </tr>
         @endforeach
-        </div>
+            </tbody>
+        </table>
     @else
         <div class="post-preview">
             <h2 class="post-title">

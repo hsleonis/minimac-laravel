@@ -60,8 +60,14 @@ class DashboardController extends Controller
         return view('admin.newpost');
     }
 
-    public function allposts($id=1){
-        $limit = config('blog.posts_per_page');
+    /**
+     * Show all posts in admin panel
+     * @param int $id
+     * @return $this
+     */
+    public function allposts($id=1)
+    {
+        $limit = config('blog.posts_per_page_admin');
         $offset = ($id-1)*$limit;
 
         $blogs = Blog::orderBy('published_at', 'desc')->limit($limit)->offset($offset)->get();
@@ -75,5 +81,13 @@ class DashboardController extends Controller
             'next_page' => $next_page,
             'prv_page'  => $prv_page
         ));
+    }
+
+
+    public function deletepost($id, Request $request)
+    {
+        
+        $request->session()->flash('alert-success', 'Post removed successfully!');
+        return redirect('admin/blog');
     }
 }

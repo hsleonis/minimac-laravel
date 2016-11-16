@@ -133,7 +133,7 @@
                         <a href="#">
                                 <span class="ion-stack">
                                     <i class="ion-record ion-lg ion-stack-2x"></i>
-                                    <i class="ion-social-twitter ion-stack-1x"></i>
+                                    <i class="ion-social-twitter ion-stack-1x ion-inverse"></i>
                                 </span>
                         </a>
                     </li>
@@ -141,7 +141,7 @@
                         <a href="#">
                                 <span class="ion-stack">
                                     <i class="ion-record ion-lg ion-stack-2x"></i>
-                                    <i class="ion-social-facebook ion-stack-1x"></i>
+                                    <i class="ion-social-facebook ion-stack-1x ion-inverse"></i>
                                 </span>
                         </a>
                     </li>
@@ -149,7 +149,7 @@
                         <a href="#">
                                 <span class="ion-stack">
                                     <i class="ion-record ion-lg ion-stack-2x"></i>
-                                    <i class="ion-social-github ion-stack-1x"></i>
+                                    <i class="ion-social-github ion-stack-1x ion-inverse"></i>
                                 </span>
                         </a>
                     </li>
